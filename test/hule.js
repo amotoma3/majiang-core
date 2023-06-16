@@ -1606,5 +1606,34 @@ suite('Majiang.Util', ()=>{
                               fenpei: [ 12000, -4000, -4000, -4000]});
             });
         });
+        suite('三麻', ()=>{
+            test('30符 3翻 親 ツモ → 2000∀', ()=>{
+                hule = Majiang.Util.hule(
+                            Majiang.Shoupai.fromString('m22z111p445566s789'),
+                            null,
+                            param({zhuangfeng:1,menfeng:0,
+                                   rule:Majiang.rule(
+                                            {'三麻':true})}));
+                assert.deepEqual(hule,
+                            { hupai: [{ name: '門前清自摸和', fanshu: 1 },
+                                      { name: '自風 東',     fanshu: 1 },
+                                      { name: '一盃口',      fanshu: 1 }],
+                              fu: 30, fanshu: 3, damanguan: null, defen: 4000,
+                              fenpei: [  4000, -2000, -2000, 0]});
+            });
+            test('30符 4翻 子 ツモ → 2000/3900', ()=>{
+                hule = Majiang.Util.hule(
+                            Majiang.Shoupai.fromString('m11z111p123789s789'),
+                            null,
+                            param({rule:Majiang.rule(
+                                            {'三麻':true})}));
+                assert.deepEqual(hule,
+                            { hupai: [{ name: '門前清自摸和', fanshu: 1 },
+                                      { name: '場風 東',     fanshu: 1 },
+                                      { name: '混全帯幺九',   fanshu: 2 }],
+                              fu: 30, fanshu: 4, damanguan: null, defen: 5900,
+                              fenpei: [ -3900,  5900, -2000, 0]});
+            });
+        });
     });
 });
