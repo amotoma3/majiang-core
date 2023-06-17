@@ -69,6 +69,11 @@ suite('Majiang.Util', ()=>{
                             Majiang.Shoupai.fromString(
                                                 'm11122,p123-,s12-3,z111=,')),
                             0));
+        test('三麻(北抜きあり)', ()=>
+            assert.equal(Majiang.Util.xiangting_yiban(
+                            Majiang.Shoupai.fromString(
+                                                'm19p12z566,z4,s888=,z4,z111+')),
+                            2));
 
         test('一般手: 10000パターン', ()=>{
             for (let data of data1) {
