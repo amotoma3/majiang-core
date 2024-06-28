@@ -1,9 +1,11 @@
-const assert = require('assert');
+import assert from 'assert';
 
-const Majiang = require('../');
-Majiang.Dev = { Game: require('../dev/game') };
+import Majiang from '../lib/index.js';
+import Game from "../dev/game.js"
 
-const script = require('./data/script.json');
+Majiang.Dev = { Game };
+
+import script from "./data/script.json" with { type: "json" };
 
 let MSG = [];
 

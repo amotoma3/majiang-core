@@ -1,8 +1,8 @@
-const assert = require('assert');
+import assert from 'assert';
 
-const Majiang = require('../');
+import Majiang from '../lib/index.js';
 
-const data = require('./data/hule.json');
+import data from "./data/hule.json" with { type: "json" };
 
 const param = Majiang.Util.hule_param;
 

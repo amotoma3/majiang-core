@@ -1,9 +1,4 @@
-/*
- *  Majiang.Dev.Game
- */
-"use strict";
-
-const Majiang = require('../');
+import Majiang from '../lib/index.js';
 
 function make_shan(rule, log) {
 
@@ -74,7 +69,10 @@ class Player {
     action(msg, callback) { if (callback) callback(this._reply.shift()) }
 }
 
-module.exports = class Game extends Majiang.Game {
+/*
+ *  Majiang.Dev.Game
+ */
+export default class Game extends Majiang.Game {
 
     constructor(script, rule) {
         super([0,1,2,3].map(x=> new Player()), null, rule);

@@ -1,11 +1,11 @@
-const assert = require('assert');
+import assert from 'assert';
 
-const Majiang = require('../');
+import Majiang from '../lib/index.js';
 
-const data1 = require('./data/xiangting_1.json');
-const data2 = require('./data/xiangting_2.json');
-const data3 = require('./data/xiangting_3.json');
-const data4 = require('./data/xiangting_4.json');
+import data1 from "./data/xiangting_1.json" with { type: "json" };
+import data2 from "./data/xiangting_2.json" with { type: "json" };
+import data3 from "./data/xiangting_3.json" with { type: "json" };
+import data4 from "./data/xiangting_4.json" with { type: "json" };
 
 suite('Majiang.Util', ()=>{
 
